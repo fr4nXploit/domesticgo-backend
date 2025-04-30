@@ -4,9 +4,7 @@ import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import pe.edu.upc.domesticgo.dtos.ChatDTO;
-import pe.edu.upc.domesticgo.dtos.NotificacionDTO;
 import pe.edu.upc.domesticgo.entities.Chat;
-import pe.edu.upc.domesticgo.entities.Notificacion;
 import pe.edu.upc.domesticgo.servicesinterfaces.IChatService;
 
 import java.util.List;
@@ -32,7 +30,7 @@ public class ChatController {
     @PostMapping("/registrar")
     public void insertar(@RequestBody ChatDTO chatDto){
         ModelMapper m=new ModelMapper();
-        Chat chat=m.map(chatDto, Notificacion.class);
+        Chat chat=m.map(chatDto, Chat.class);
         chatService.insert(chat);
     }
 
