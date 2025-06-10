@@ -20,10 +20,10 @@ public class NotificacionController {
     // Metodos CRUD (listar, insertar, modificar, eliminar, buscarId)
 
     @GetMapping("/listado")
-    public List<Notificacion> listar() {
+    public List<NotificacionDTO> listar() {
         return notiService.list().stream().map(n ->{
-            ModelMapper m=new ModelMapper();
-            return m.map(n, Notificacion.class);
+            ModelMapper m = new ModelMapper();
+            return m.map(n, NotificacionDTO.class);
         }).collect(Collectors.toList());
     }
 

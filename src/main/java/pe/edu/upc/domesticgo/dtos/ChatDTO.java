@@ -1,4 +1,6 @@
 package pe.edu.upc.domesticgo.dtos;
+import pe.edu.upc.domesticgo.entities.Usuario;
+
 import java.time.LocalDate;
 
 public class ChatDTO {
@@ -6,7 +8,8 @@ public class ChatDTO {
     private LocalDate fechaMensaje;
     private String detalleMensaje;
     // Falta Foreign Key Usuario
-
+    private Usuario contratante;
+    private Usuario contratado;
 
     // Getters and Setters
     public int getIdChat() {
@@ -31,5 +34,21 @@ public class ChatDTO {
 
     public void setDetalleMensaje(String detalleMensaje) {
         this.detalleMensaje = detalleMensaje;
+    }
+
+    public Usuario getContratante() {
+        return contratante;
+    }
+
+    public void setContratante(Usuario contratante) {
+        this.contratante = contratante;
+    }
+
+    public Usuario getContratado() {
+        return contratado;
+    }
+
+    public void setContratado(Usuario contratado) {
+        this.contratado = contratado;
     }
 }

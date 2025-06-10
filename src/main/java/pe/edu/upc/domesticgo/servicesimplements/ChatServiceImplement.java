@@ -39,4 +39,5 @@ public class ChatServiceImplement implements IChatService {
     public Chat searchId(int id) {
         return chatRepository.findById(id).orElse(new Chat());
     }
+
 }

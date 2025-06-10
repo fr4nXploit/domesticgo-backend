@@ -19,13 +19,22 @@ public class Notificacion {
 
     //Foreign Key idUsuario @ManytoOne
 
+    @ManyToOne
+    @JoinColumn(name = "idUsuario", nullable = false)
+    private Usuario usuario;
 
-    // Costructores y Getters and Setters (falta constructores completo y llave foranea)
 
+    // Constructores, Getters and Setters (falta constructores completo y llave foranea)
 
     public Notificacion() {
     }
 
+    public Notificacion(int idNotificacion, LocalDate fechaNotificacion, String detalleNotificacion, Usuario usuario) {
+        this.idNotificacion = idNotificacion;
+        this.fechaNotificacion = fechaNotificacion;
+        this.detalleNotificacion = detalleNotificacion;
+        this.usuario = usuario;
+    }
 
     public int getIdNotificacion() {
         return idNotificacion;
@@ -49,5 +58,13 @@ public class Notificacion {
 
     public void setDetalleNotificacion(String detalleNotificacion) {
         this.detalleNotificacion = detalleNotificacion;
+    }
+
+    public Usuario getUsuario() {
+        return usuario;
+    }
+
+    public void setUsuario(Usuario usuario) {
+        this.usuario = usuario;
     }
 }

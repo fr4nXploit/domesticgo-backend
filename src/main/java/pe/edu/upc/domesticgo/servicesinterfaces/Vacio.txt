@@ -1,0 +1,8 @@
+Estructura de Metodos CRUD
+
+// Metodos de CRUD
+    public List<zzz> list();
+    public void insert(zzz user);
+    public void update(zzz user);
+    public void delete(int id);
+    public zzz searchId(int id);

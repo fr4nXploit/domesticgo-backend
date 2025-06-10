@@ -20,10 +20,10 @@ public class ChatController {
     // Metodos CRUD (listar, registrar, modificar, eliminar, listarId)
 
     @GetMapping("/listado")
-    public List<Chat> listar() {
+    public List<ChatDTO> listar() {
         return chatService.list().stream().map(n ->{
             ModelMapper m=new ModelMapper();
-            return m.map(n, Chat.class);
+            return m.map(n, ChatDTO.class);
         }).collect(Collectors.toList());
     }
 
@@ -47,7 +47,7 @@ public class ChatController {
     }
 
     @GetMapping("/{id}")
-    public ChatDTO buscar(@PathVariable("id") int id){
+    public ChatDTO buscarId(@PathVariable("id") int id){
         ModelMapper m=new ModelMapper();
         ChatDTO dto=m.map(chatService.searchId(id), ChatDTO.class);
         return dto;

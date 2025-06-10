@@ -1,4 +1,6 @@
 package pe.edu.upc.domesticgo.dtos;
+import pe.edu.upc.domesticgo.entities.Usuario;
+
 import java.time.LocalDate;
 
 public class NotificacionDTO {
@@ -6,8 +8,9 @@ public class NotificacionDTO {
     private LocalDate fechaNotificacion;
     private String detalleNotificacion;
     // Falta Foreign Key de Usuario
+    private Usuario usuario;
 
-
+    // Getters and Setters
     public int getIdNotificacion() {
         return idNotificacion;
     }
@@ -30,5 +33,13 @@ public class NotificacionDTO {
 
     public void setDetalleNotificacion(String detalleNotificacion) {
         this.detalleNotificacion = detalleNotificacion;
+    }
+
+    public Usuario getUsuario() {
+        return usuario;
+    }
+
+    public void setUsuario(Usuario usuario) {
+        this.usuario = usuario;
     }
 }

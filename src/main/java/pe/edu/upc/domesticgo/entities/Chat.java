@@ -19,12 +19,26 @@ public class Chat {
 
     // Foreign Keys  idContratante (Usuario) e idContratado (Usuario) ambas @ManytoOne
 
+    @ManyToOne
+    @JoinColumn(name = "idContratante", nullable = false)
+    private Usuario contratante;
+
+    @ManyToOne
+    @JoinColumn(name = "idContratado", nullable = false)
+    private Usuario contratado;
 
     // Getters and Setters and Constructors (falta constructores completo y llave foranea)
 
     public Chat() {
     }
 
+    public Chat(int idChat, LocalDate fechaMensaje, String detalleMensaje, Usuario contratante, Usuario contratado) {
+        this.idChat = idChat;
+        this.fechaMensaje = fechaMensaje;
+        this.detalleMensaje = detalleMensaje;
+        this.contratante = contratante;
+        this.contratado = contratado;
+    }
 
     public int getIdChat() {
         return idChat;
@@ -48,5 +62,21 @@ public class Chat {
 
     public void setDetalleMensaje(String detalleMensaje) {
         this.detalleMensaje = detalleMensaje;
+    }
+
+    public Usuario getContratante() {
+        return contratante;
+    }
+
+    public void setContratante(Usuario contratante) {
+        this.contratante = contratante;
+    }
+
+    public Usuario getContratado() {
+        return contratado;
+    }
+
+    public void setContratado(Usuario contratado) {
+        this.contratado = contratado;
     }
 }

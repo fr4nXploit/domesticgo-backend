@@ -12,31 +12,31 @@ import java.util.List;
 public class NotificacionServiceImplement implements INotificacionService {
 
     @Autowired
-    private INotificacionRepository notificacionRepository;
+    private INotificacionRepository notiRepository;
 
     // Implementacion de Metodos CRUD
     @Override
     public List<Notificacion> list() {
-        return notificacionRepository.findAll();
+        return notiRepository.findAll();
     }
 
     @Override
     public void insert(Notificacion noti) {
-        notificacionRepository.save(noti);
+        notiRepository.save(noti);
     }
 
     @Override
     public void update(Notificacion noti) {
-        notificacionRepository.save(noti);
+        notiRepository.save(noti);
     }
 
     @Override
     public void delete(int id) {
-        notificacionRepository.deleteById(id);
+        notiRepository.deleteById(id);
     }
 
     @Override
     public Notificacion searchId(int id) {
-        return notificacionRepository.findById(id).orElse(new Notificacion());
+        return notiRepository.findById(id).orElse(new Notificacion());
     }
 }
