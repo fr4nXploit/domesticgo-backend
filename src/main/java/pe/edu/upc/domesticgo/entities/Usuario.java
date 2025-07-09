@@ -27,9 +27,6 @@ public class Usuario {
 
     // Foreign Key @ManytoOne Rol y Empleo
 
-    @ManyToOne
-    @JoinColumn(name = "idRol", nullable = false)
-    private Rol rol;  // Relación con Rol
 
     @OneToOne
     @JoinColumn(name = "idEmpleo", nullable = false)
@@ -41,14 +38,13 @@ public class Usuario {
     public Usuario() {
     }
 
-    public Usuario(int idUsuario, String nombres, String apellidoPaterno, String apellidoMaterno, String email, String foto, Rol rol, Empleo empleo) {
+    public Usuario(int idUsuario, String nombres, String apellidoPaterno, String apellidoMaterno, String email, String foto, Empleo empleo) {
         this.idUsuario = idUsuario;
         this.nombres = nombres;
         this.apellidoPaterno = apellidoPaterno;
         this.apellidoMaterno = apellidoMaterno;
         this.email = email;
         this.foto = foto;
-        this.rol = rol;
         this.empleo = empleo;
     }
 
@@ -99,14 +95,7 @@ public class Usuario {
     public void setFoto(String foto) {
         this.foto = foto;
     }
-
-    public Rol getRol() {
-        return rol;
-    }
-
-    public void setRol(Rol rol) {
-        this.rol = rol;
-    }
+    
 
     public Empleo getEmpleo() {
         return empleo;

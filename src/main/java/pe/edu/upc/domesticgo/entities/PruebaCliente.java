@@ -39,14 +39,14 @@ public class PruebaCliente {
 
     @ManyToOne
     @JoinColumn(name = "idRol",nullable = false)
-    private Rol rol;
+    private Role role;
 
     // G y S
 
     public PruebaCliente() {
     }
 
-    public PruebaCliente(int idPCliente, String nombre, String apellido, int edad, LocalDate fechaNacimiento, LocalTime horaSalida, double sueldo,boolean experto, Rol rol) {
+    public PruebaCliente(int idPCliente, String nombre, String apellido, int edad, LocalDate fechaNacimiento, LocalTime horaSalida, double sueldo,boolean experto, Role role) {
         this.idPCliente = idPCliente;
         this.nombre = nombre;
         this.apellido = apellido;
@@ -55,7 +55,7 @@ public class PruebaCliente {
         this.horaSalida = horaSalida;
         this.sueldo = sueldo;
         this.experto = true;
-        this.rol = rol;
+        this.role = role;
     }
 
     public int getIdPCliente() {
@@ -122,11 +122,11 @@ public class PruebaCliente {
         this.experto = experto;
     }
 
-    public Rol getRol() {
-        return rol;
+    public Role getRol() {
+        return role;
     }
 
-    public void setRol(Rol rol) {
-        this.rol = rol;
+    public void setRol(Role role) {
+        this.role = role;
     }
 }

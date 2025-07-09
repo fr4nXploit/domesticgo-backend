@@ -1,7 +1,7 @@
 package pe.edu.upc.domesticgo.dtos;
 
 import pe.edu.upc.domesticgo.entities.Empleo;
-import pe.edu.upc.domesticgo.entities.Rol;
+import pe.edu.upc.domesticgo.entities.Role;
 
 public class UsuarioDTO {
     private int idUsuario;
@@ -10,7 +10,7 @@ public class UsuarioDTO {
     private String apellidoMaterno;
     private String email;
     private String foto;
-    private Rol rol;
+    private Role role;
     private Empleo empleo;
 
     // Getters and Setters
@@ -62,12 +62,12 @@ public class UsuarioDTO {
         this.foto = foto;
     }
 
-    public Rol getRol() {
-        return rol;
+    public Role getRole() {
+        return role;
     }
 
-    public void setRol(Rol rol) {
-        this.rol = rol;
+    public void setRol(Role rol) {
+        this.role = role;
     }
 
     public Empleo getEmpleo() {
